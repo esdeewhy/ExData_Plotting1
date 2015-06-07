@@ -1,19 +1,19 @@
 getwd()
 
-# reading data
+## reading data
 myData<- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings ="?", stringsAsFactors = FALSE)
 
-# Formating Date
+## Formating Date
 myData$Date<- as.Date(myData$Date, format = "%d/%m/%Y")
 
-# Subsetting data to the range dates
+## Subsetting data to the range dates
 data<- subset(myData, myData$Date >= "2007-02-01" & Date <= "2007-02-02")
 
-# Converting dates
+## Converting dates
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
-# Plotting 3 and saving as png: 
+## Plotting 3 and saving as png: 
 x<- data$Datetime
 y1<- data$Sub_metering_1
 y2<- data$Sub_metering_2
