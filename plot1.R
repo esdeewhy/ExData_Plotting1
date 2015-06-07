@@ -13,6 +13,6 @@ data<- subset(myData, myData$Date >= "2007-02-01" & Date <= "2007-02-02")
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
-## Plotting graph 1: 
+## Plotting graph 1 
 
 hist(data$Global_active_power, xlab = "Global Active Power(kilowatts)", main = "Global Active Power", col = "red")
